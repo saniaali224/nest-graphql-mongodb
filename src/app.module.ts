@@ -4,7 +4,8 @@ import { LessonModule } from './lesson/lesson.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { Lesson } from './lesson/lesson.entity';
 import { StudentModule } from './student/student.module';
-import {Student} from './student/student.entity';
+import { Student } from './student/student.entity';
+import { ScheduleModule } from '@nestjs/schedule';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import {Student} from './student/student.entity';
 
 
     }),
+    ScheduleModule.forRoot(),
     GraphQLModule.forRoot({
       autoSchemaFile: true
     }),
